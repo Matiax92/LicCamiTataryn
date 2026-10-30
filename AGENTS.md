@@ -4,15 +4,16 @@
 Sitio web de presentación profesional de **Lic. Camila Tataryn, Fonoaudióloga y Audióloga** (M.P. 1830/2).
 Es un HTML estático con Tailwind (CDN), sin framework ni build. Página principal: `index.html`.
 
-## Repo (GitHub) — este proyecto ES el repo de fotos
-- Este directorio ES el repo `github.com/Matiax92/fotos` (remote `origin`, vagrant SSH: `git@github.com:Matiax92/fotos.git`).
+## Repo (GitHub) — renombrado a `LicCamiTataryn`
+- Este directorio ES el repo `github.com/Matiax92/LicCamiTataryn` (remote `origin`, SSH: `git@github.com:Matiax92/LicCamiTataryn.git`).
+- ANTIGUO: repo `fotos` antes de ser renombrado (2026-10-30). GitHub redirige push/raw URLs del nombre viejo por un tiempo, pero usar siempre el nuevo.
 - El sitio (`index.html`), `tools/` y las imágenes comparten historia en `main`; se pushea todo desde acá.
 - Imágenes en la RAÍZ del repo:
   - `Diseño sin título.png` (500×500) → logo/isotipo del header.
   - `foto profesional.jpeg` (960×1280) → foto profesional (hero + sección Sobre Mí).
-- El sitio referencia las imágenes vía `raw.githubusercontent.com/Matiax92/fotos/main/...` (siempre vigente aunque el repo contenga el sitio).
+- El sitio referencia las imágenes vía `raw.githubusercontent.com/Matiax92/LicCamiTataryn/main/...` (siempre vigente aunque el repo contenga el sitio).
 - Push: `git push` (SSH ya autentica como `Matiax92`). Sincronizar desde otro equipo: `git pull`.
-- Deploy: GitHub Pages (Settings → Pages → branch `main`, carpeta root) → `https://matiax92.github.io/fotos/`. El archivo debe llamarse `index.html` para que la raíz sirva el sitio (por eso NO usar otro nombre como `LicCamiTataryn.html`).
+- Deploy: GitHub Pages (Settings → Pages → branch `main`, carpeta root) → `https://matiax92.github.io/LicCamiTataryn/`. El archivo debe llamarse `index.html` para que la raíz sirva el sitio (por eso NO usar otro nombre como `LicCamiTataryn.html`).
 
 ## Marca / tokens de diseño (ya definidos en el HTML)
 - Colores (Tailwind `brand`): `beige #F7F1E5`, `sage #94B49F`, `sage-dark #7A9A85`, `sage-ink #4A6B58` (texto/botones con AA), `sage-ink-dark #3E5949` (hover), `rose #E8C9D6`, `bg #FAFAFA`, `text #2D3748`, `muted #5B6C80`. Acento auxiliar presente solo en CSS de respaldo: `#F5C2C1`.
@@ -54,7 +55,7 @@ Es un HTML estático con Tailwind (CDN), sin framework ni build. Página princip
 ## Cosas pendientes / ideas para seguir mejorando (progresivamente)
 - [x] Contraste AA/AAA en textos y botones (tokens `sage-ink`, `muted` más oscura).
 - [x] Imágenes `loading="lazy"` (Sobre Mí; logo/foto del hero quedan eager por estar arriba del pliegue).
-- [x] Repo con remote y push por SSH (`origin` = Matiax92/fotos).
+- [x] Repo con remote y push por SSH (`origin` = Matiax92/LicCamiTataryn, antes `fotos`).
 - [ ] Reemplazar raw URLs por assets locales optimizados cuando haya deploy propio.
 - [ ] Google Maps real cuando haya dirección confirmada.
 - [ ] Meta description + Open Graph (compartir por WhatsApp se ve mejor).
@@ -63,4 +64,4 @@ Es un HTML estático con Tailwind (CDN), sin framework ni build. Página princip
 
 ## Reglas de conversión
 - Todo texto visible en español rioplatense; profesional y cálido.
-- Las fotos e isotipo viven en la raíz de este repo (este repo ES `fotos`); no duplicar imágenes en subcarpetas del sitio.
+- Las fotos e isotipo viven en la raíz de este repo (este repo ES el repo de imágenes renombrado `LicCamiTataryn`); no duplicar imágenes en subcarpetas del sitio.
