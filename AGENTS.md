@@ -56,11 +56,11 @@ Es un HTML estático con Tailwind (CDN), sin framework ni build. Página princip
 - [x] Contraste AA/AAA en textos y botones (tokens `sage-ink`, `muted` más oscura).
 - [x] Imágenes `loading="lazy"` (Sobre Mí; logo/foto del hero quedan eager por estar arriba del pliegue).
 - [x] Repo con remote y push por SSH (`origin` = Matiax92/LicCamiTataryn, antes `fotos`).
-- [ ] Reemplazar raw URLs por assets locales optimizados cuando haya deploy propio.
+- [x] Raw URLs → rutas relativas (las imágenes viven en la raíz del mismo repo que sirve el sitio; funciona local y en Pages).
 - [ ] Google Maps real cuando haya dirección confirmada.
 - [ ] Meta description + Open Graph (compartir por WhatsApp se ve mejor).
-- [ ] `scroll-margin-top` para anclas en móvil (el header sticky tapa los títulos).
-- [ ] GitHub Pages para deploy (activar en Settings → Pages → main, carpeta root).
+- [x] `scroll-margin-top` para anclas en móvil (`scroll-mt-24` en las 5 secciones).
+- [x] GitHub Pages deploy activado → https://matiax92.github.io/LicCamiTataryn/ (branch `main`, carpeta root).
 
 ## Reglas de conversión
 - Todo texto visible en español rioplatense; profesional y cálido.
