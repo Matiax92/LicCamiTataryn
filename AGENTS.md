@@ -4,18 +4,19 @@
 Sitio web de presentación profesional de **Lic. Camila Tataryn, Fonoaudióloga y Audióloga** (M.P. 1830/2).
 Es un HTML estático con Tailwind (CDN), sin framework ni build. Página principal: `LicCamiTataryn.html`.
 
-## Asociación con el repo de fotos (GitHub)
-- Repo remoto: <https://github.com/Matiax92/fotos> (del usuario `Matiax92`)
-- Clonado en: `fotos/` (sub-repositorio, ignorado por el git del sitio — `.gitignore`).
-- El sitio referencia las imágenes vía `raw.githubusercontent.com/Matiax92/main/...`:
-  - `fotos/Diseño sin título.png` (500×500) → logo/isotipo del header.
-  - `fotos/foto profesional.jpeg` (960×1280) → foto profesional (hero + sección Sobre Mí).
-- Flujo de imágenes: **editar/agregar en el repo `fotos` y hacer push**; el sitio se actualiza solo por la URL raw.
-- Para usar imágenes optimizadas localmente: `node tools/optimize.mjs "./fotos/foto profesional.jpeg" 800` → genera `assets/web/*.webp|avif`.
-- Para sincronizar el clon: `cd fotos && git pull`.
+## Repo (GitHub) — este proyecto ES el repo de fotos
+- Este directorio ES el repo `github.com/Matiax92/fotos` (remote `origin`, vagrant SSH: `git@github.com:Matiax92/fotos.git`).
+- El sitio (`LicCamiTataryn.html`), `tools/` y las imágenes comparten historia en `main`; se pushea todo desde acá.
+- Imágenes en la RAÍZ del repo:
+  - `Diseño sin título.png` (500×500) → logo/isotipo del header.
+  - `foto profesional.jpeg` (960×1280) → foto profesional (hero + sección Sobre Mí).
+- El sitio referencia las imágenes vía `raw.githubusercontent.com/Matiax92/fotos/main/...` (siempre vigente aunque el repo contenga el sitio).
+- Push: `git push` (SSH ya autentica como `Matiax92`). Sincronizar desde otro equipo: `git pull`.
+- Deploy opcional: activar GitHub Pages (Settings → Pages → branch `main`, carpeta root) → quedaría en `https://matiax92.github.io/fotos/`.
 
 ## Marca / tokens de diseño (ya definidos en el HTML)
-- Colores (Tailwind `brand`): `beige #F7F1E5`, `sage #94B49F`, `sage-dark #7A9A85`, `rose #E8C9D6`, `bg #FAFAFA`, `text #2D3748`, `muted #64748B`. Acento auxiliar presente solo en CSS de respaldo: `#F5C2C1`.
+- Colores (Tailwind `brand`): `beige #F7F1E5`, `sage #94B49F`, `sage-dark #7A9A85`, `sage-ink #4A6B58` (texto/botones con AA), `sage-ink-dark #3E5949` (hover), `rose #E8C9D6`, `bg #FAFAFA`, `text #2D3748`, `muted #5B6C80`. Acento auxiliar presente solo en CSS de respaldo: `#F5C2C1`.
+- Regla de contraste: texto o botón con contenido importante → `sage-ink`/`sage-ink-dark` sobre claros y blanco sobre `sage-ink`; `sage` claro solo para decoración (chips, bordes, puntos).
 - Tipografías: **League Spartan** (títulos, `font-heading`) + **Plus Jakarta Sans** (cuerpo, Google Fonts).
 - Estilo: clínico-cálido, tarjetas redondeadas (`rounded-2xl/3xl`), sombras suaves verdosas (`card-shadow`), gradientes beige→blanco→rosa.
 - Contacto fijo: WhatsApp `5493471319597` (+54 9 3471 31-9597). Turnos por WhatsApp. Ubicación: mapa placeholder (se pide por WhatsApp).
@@ -51,12 +52,15 @@ Es un HTML estático con Tailwind (CDN), sin framework ni build. Página princip
 - Nada de emojis dentro de imágenes importantes / no mockups: el diseño va directo al HTML.
 
 ## Cosas pendientes / ideas para seguir mejorando (progresivamente)
-- [ ] Reemplazar raw URLs por assets locales optimizados cuando hay deploy propio.
-- [ ] Imágenes `loading="lazy"` (excepto logo/foto del hero).
+- [x] Contraste AA/AAA en textos y botones (tokens `sage-ink`, `muted` más oscura).
+- [x] Imágenes `loading="lazy"` (Sobre Mí; logo/foto del hero quedan eager por estar arriba del pliegue).
+- [x] Repo con remote y push por SSH (`origin` = Matiax92/fotos).
+- [ ] Reemplazar raw URLs por assets locales optimizados cuando haya deploy propio.
 - [ ] Google Maps real cuando haya dirección confirmada.
-- [ ] `alt`/`aria-label` meta description + Open Graph (compartir por WhatsApp se ve mejor).
-- [ ] Numerar secciones en móvil con `scroll-margin-top` (header sticky tapa anclas).
+- [ ] Meta description + Open Graph (compartir por WhatsApp se ve mejor).
+- [ ] `scroll-margin-top` para anclas en móvil (el header sticky tapa los títulos).
+- [ ] GitHub Pages para deploy (activar en Settings → Pages → main, carpeta root).
 
 ## Reglas de conversión
 - Todo texto visible en español rioplatense; profesional y cálido.
-- Las fotos e isotipo siempre provienen del repo `fotos` (no subir duplicados al repo del sitio).
+- Las fotos e isotipo viven en la raíz de este repo (este repo ES `fotos`); no duplicar imágenes en subcarpetas del sitio.
