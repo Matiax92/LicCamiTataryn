@@ -58,9 +58,16 @@ Es un HTML estático con Tailwind (CDN), sin framework ni build. Página princip
 - [x] Repo con remote y push por SSH (`origin` = Matiax92/LicCamiTataryn, antes `fotos`).
 - [x] Raw URLs → rutas relativas (las imágenes viven en la raíz del mismo repo que sirve el sitio; funciona local y en Pages).
 - [ ] Google Maps real cuando haya dirección confirmada.
-- [ ] Meta description + Open Graph (compartir por WhatsApp se ve mejor).
+- [x] Meta description + Open Graph (compartir por WhatsApp se ve mejor). `og:image` apunta a la foto en Pages; cambiar a `fonocamitataryn.com.ar` cuando el dominio esté en vivo.
 - [x] `scroll-margin-top` para anclas en móvil (`scroll-mt-24` en las 5 secciones).
 - [x] GitHub Pages deploy activado → https://matiax92.github.io/LicCamiTataryn/ (branch `main`, carpeta root).
+- [ ] Dominio custom `fonocamitataryn.com.ar` (comprado en nic.ar) — EN CURSO:
+  - [x] `CNAME` en raíz del repo con `fonocamitataryn.com.ar` (commit 741060b).
+  - [ ] Cloudflare (gratis): agregar la zona del dominio → anotar los 2 nameservers que asigna.
+  - [ ] DNS en Cloudflare: `A @` → 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153 (todos *DNS only* / nube gris) + `CNAME www` → `matiax92.github.io` (*DNS only*).
+  - [ ] nic.ar → Delegación: poner los 2 nameservers de Cloudflare.
+  - [ ] GitHub → Settings → Pages → Custom domain `fonocamitataryn.com.ar` → Save; cuando el check pase, tildar **Enforce HTTPS**.
+  - [ ] Al estar en vivo: actualizar `og:url`/`og:image` al dominio y esta URL canónica en AGENTS.md.
 
 ## Reglas de conversión
 - Todo texto visible en español rioplatense; profesional y cálido.
