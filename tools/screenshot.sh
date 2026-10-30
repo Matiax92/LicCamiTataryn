@@ -2,7 +2,7 @@
 # Uso: ./tools/screenshot.sh <archivo.html|url> [desktop|mobile] [etiqueta]
 # Captura la página con Chrome headless -> .design/ para evaluar diseño visualmente
 set -euo pipefail
-page="${1:-LicCamiTataryn.html}"
+page="${1:-index.html}"
 viewport="${2:-desktop}"
 label="${3:-""}"
 

@@ -2,17 +2,17 @@
 
 ## Qué es
 Sitio web de presentación profesional de **Lic. Camila Tataryn, Fonoaudióloga y Audióloga** (M.P. 1830/2).
-Es un HTML estático con Tailwind (CDN), sin framework ni build. Página principal: `LicCamiTataryn.html`.
+Es un HTML estático con Tailwind (CDN), sin framework ni build. Página principal: `index.html`.
 
 ## Repo (GitHub) — este proyecto ES el repo de fotos
 - Este directorio ES el repo `github.com/Matiax92/fotos` (remote `origin`, vagrant SSH: `git@github.com:Matiax92/fotos.git`).
-- El sitio (`LicCamiTataryn.html`), `tools/` y las imágenes comparten historia en `main`; se pushea todo desde acá.
+- El sitio (`index.html`), `tools/` y las imágenes comparten historia en `main`; se pushea todo desde acá.
 - Imágenes en la RAÍZ del repo:
   - `Diseño sin título.png` (500×500) → logo/isotipo del header.
   - `foto profesional.jpeg` (960×1280) → foto profesional (hero + sección Sobre Mí).
 - El sitio referencia las imágenes vía `raw.githubusercontent.com/Matiax92/fotos/main/...` (siempre vigente aunque el repo contenga el sitio).
 - Push: `git push` (SSH ya autentica como `Matiax92`). Sincronizar desde otro equipo: `git pull`.
-- Deploy opcional: activar GitHub Pages (Settings → Pages → branch `main`, carpeta root) → quedaría en `https://matiax92.github.io/fotos/`.
+- Deploy: GitHub Pages (Settings → Pages → branch `main`, carpeta root) → `https://matiax92.github.io/fotos/`. El archivo debe llamarse `index.html` para que la raíz sirva el sitio (por eso NO usar otro nombre como `LicCamiTataryn.html`).
 
 ## Marca / tokens de diseño (ya definidos en el HTML)
 - Colores (Tailwind `brand`): `beige #F7F1E5`, `sage #94B49F`, `sage-dark #7A9A85`, `sage-ink #4A6B58` (texto/botones con AA), `sage-ink-dark #3E5949` (hover), `rose #E8C9D6`, `bg #FAFAFA`, `text #2D3748`, `muted #5B6C80`. Acento auxiliar presente solo en CSS de respaldo: `#F5C2C1`.
@@ -38,9 +38,9 @@ Es un HTML estático con Tailwind (CDN), sin framework ni build. Página princip
 - Requisito: si falta `node_modules`, ejecutar `npm i sharp` dentro de `tools/`.
 
 ## Flujo de mejora progresiva (usar SIEMPRE al hacer cambios de diseño)
-1. Referencia visual: `./tools/screenshot.sh LicCamiTataryn.html desktop antes` (+ `mobile`).
+1. Referencia visual: `./tools/screenshot.sh index.html desktop antes` (+ `mobile`).
 2. Cambios en el HTML (un paso chico por vez, un objetivo por commit: tipografía, jerarquía, contraste, espaciado, etc.).
-3. Captura **después**: `./tools/screenshot.sh LicCamiTataryn.html desktop despues` y comparar con la anterior.
+3. Captura **después**: `./tools/screenshot.sh index.html desktop despues` y comparar con la anterior.
 4. Verificar accesibilidad/rendimiento básico: contraste AAA/AA, tamaños táctiles, `alt` de imágenes, peso de imágenes (si>200 KB → optimizar con `optimize.mjs`), no romper nada mobile.
 5. Commits atómicos y descriptivos (español OK). Ej: `hero: aumenta jerarquía subtitulo`.
 
