@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lic. Camila Tataryn | Fonoaudiología</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: League Spartan & Open Sans para cuerpo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            beige: '#F7F1E5',
+                            sage: '#94B49F',
+                            'sage-dark': '#7A9A85',
+                            rose: '#E8C9D6',
+                            bg: '#FAFAFA',
+                            text: '#2D3748',
+                            muted: '#64748B'
+                        }
+                    },
+                    fontFamily: {
+                        spartan: ['League Spartan', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FAFAFA;
+            color: #2D3748;
+        }
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: 'League Spartan', sans-serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #F7F1E5 0%, #FAFAFA 60%, rgba(232, 201, 214, 0.25) 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 10px 30px -5px rgba(148, 180, 159, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
+        }
+        .card-shadow-hover:hover {
+            box-shadow: 0 20px 35px -10px rgba(148, 180, 159, 0.22), 0 8px 20px -4px rgba(0, 0, 0, 0.06);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-rose/40 selection:text-brand-text">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-[#FAFAFA]/90 backdrop-blur-md border-b border-brand-beige/80 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Brand Logo / Name -->
+            <a href="#" class="flex items-center gap-3 group">
+                <!-- Isotipo Oficial Oído / Onda Sonora desde GitHub -->
+                <div class="w-11 h-11 rounded-full bg-brand-sage/15 border border-brand-sage/40 flex items-center justify-center overflow-hidden text-brand-text group-hover:scale-105 transition-all duration-300 shadow-sm shrink-0">
+                    <img src="https://raw.githubusercontent.com/Matiax92/fotos/main/Dise%C3%B1o%20sin%20t%C3%ADtulo.png" alt="Logo Oído" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <span class="font-heading text-2xl font-bold tracking-tight text-brand-text block leading-none">Lic. Camila Tataryn</span>
+                    <span class="text-xs font-medium tracking-widest text-brand-muted uppercase mt-0.5 block">FonoAudiología</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#inicio" class="text-brand-text hover:text-brand-sage transition-colors">Inicio</a>
+                <a href="#fonoaudiologia" class="text-brand-text hover:text-brand-sage transition-colors">Lenguaje</a>
+                <a href="#audiologia" class="text-brand-text hover:text-brand-sage transition-colors">Audiología</a>
+                <a href="#sobre-mi" class="text-brand-text hover:text-brand-sage transition-colors">Sobre Mí</a>
+                <a href="#contacto" class="text-brand-text hover:text-brand-sage transition-colors">Contacto</a>
+            </nav>
+
+            <!-- CTA Button Header -->
+            <div class="hidden sm:block">
+                <a href="https://wa.me/5493471319597" target="_blank" rel="noopener noreferrer" 
+                   class="inline-flex items-center gap-2 bg-brand-sage hover:bg-brand-sage-dark text-white font-medium text-sm px-5 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform active:scale-95">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.758.459 3.474 1.33 4.982l-1.413 5.16 5.283-1.385a9.96 9.96 0 004.782 1.222h.005c5.507 0 9.991-4.479 9.992-9.985A9.957 9.957 0 0012.012 2zm5.82 14.161c-.244.688-1.428 1.312-1.986 1.388-.518.071-1.189.102-1.912-.132-.44-.142-1.008-.328-1.748-.648-3.08-1.334-5.093-4.437-5.247-4.643-.153-.205-1.252-1.666-1.252-3.177 0-1.512.793-2.256 1.076-2.559.283-.303.618-.379.824-.379.206 0 .412.002.59.011.188.01.441-.072.69.524.256.615.875 2.133.952 2.288.077.154.128.334.026.54-.103.205-.154.334-.308.514-.154.18-.325.402-.464.54-.154.154-.315.322-.135.63.18.308.8 1.32 1.716 2.136 1.178 1.05 2.17 1.376 2.478 1.53.308.154.488.128.668-.077.18-.205.77-.898.975-1.206.205-.308.411-.256.693-.154.282.103 1.796.847 2.104 1.001.308.154.513.231.59.359.077.129.077.744-.167 1.432z"/>
+                    </svg>
+                    <span>Turnos WhatsApp</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" aria-label="Abrir Menú" class="md:hidden p-2 rounded-xl text-brand-text hover:bg-brand-beige focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#FAFAFA] border-b border-brand-beige px-6 py-4 space-y-3">
+            <a href="#inicio" class="block py-2 text-brand-text hover:text-brand-sage font-medium">Inicio</a>
+            <a href="#fonoaudiologia" class="block py-2 text-brand-text hover:text-brand-sage font-medium">Lenguaje</a>
+            <a href="#audiologia" class="block py-2 text-brand-text hover:text-brand-sage font-medium">Audiología</a>
+            <a href="#sobre-mi" class="block py-2 text-brand-text hover:text-brand-sage font-medium">Sobre Mí</a>
+            <a href="#contacto" class="block py-2 text-brand-text hover:text-brand-sage font-medium">Contacto</a>
+            <a href="https://wa.me/5493471319597" target="_blank" class="w-full mt-2 inline-flex items-center justify-center gap-2 bg-brand-sage text-white py-3 rounded-xl font-medium">
+                Pedir Turno por WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-gradient py-16 sm:py-24 overflow-hidden relative border-b border-brand-beige/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Text Content -->
+                <div class="md:col-span-7 space-y-6 text-center md:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-rose/30 border border-brand-rose/60 text-brand-text text-xs font-semibold tracking-wider uppercase">
+                        <span class="w-2 h-2 rounded-full bg-brand-sage animate-pulse"></span>
+                        Atención Integral y Especializada
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-brand-text leading-tight tracking-tight">
+                        Lic. Camila Tataryn
+                    </h1>
+                    
+                    <p class="text-xl sm:text-2xl font-semibold text-brand-sage tracking-wide font-heading">
+                        Fonoaudiología
+                    </p>
+                    
+                    <p class="text-base sm:text-lg text-brand-muted max-w-xl leading-relaxed mx-auto md:mx-0">
+                        Un espacio dedicado a acompañar, escuchar y potenciar la comunicación, el lenguaje y la salud auditiva en todas las etapas de la vida.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="https://wa.me/5493471319597" target="_blank" rel="noopener noreferrer"
+                           class="inline-flex items-center justify-center gap-3 bg-brand-sage hover:bg-brand-sage-dark text-white font-semibold text-base px-7 py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.758.459 3.474 1.33 4.982l-1.413 5.16 5.283-1.385a9.96 9.96 0 004.782 1.222h.005c5.507 0 9.991-4.479 9.992-9.985A9.957 9.957 0 0012.012 2zm5.82 14.161c-.244.688-1.428 1.312-1.986 1.388-.518.071-1.189.102-1.912-.132-.44-.142-1.008-.328-1.748-.648-3.08-1.334-5.093-4.437-5.247-4.643-.153-.205-1.252-1.666-1.252-3.177 0-1.512.793-2.256 1.076-2.559.283-.303.618-.379.824-.379.206 0 .412.002.59.011.188.01.441-.072.69.524.256.615.875 2.133.952 2.288.077.154.128.334.026.54-.103.205-.154.334-.308.514-.154.18-.325.402-.464.54-.154.154-.315.322-.135.63.18.308.8 1.32 1.716 2.136 1.178 1.05 2.17 1.376 2.478 1.53.308.154.488.128.668-.077.18-.205.77-.898.975-1.206.205-.308.411-.256.693-.154.282.103 1.796.847 2.104 1.001.308.154.513.231.59.359.077.129.077.744-.167 1.432z"/>
+                            </svg>
+                            <span>Solicitar Turno por WhatsApp</span>
+                        </a>
+                        <a href="#contacto" 
+                           class="inline-flex items-center justify-center gap-2 bg-white hover:bg-brand-beige border border-brand-sage/30 text-brand-text font-semibold text-base px-6 py-4 rounded-2xl shadow-sm hover:shadow transition-all duration-300">
+                            <span>Ver Ubicación</span>
+                        </a>
+                    </div>
+
+                    <!-- Quick highlights badges -->
+                    <div class="pt-6 grid grid-cols-2 sm:grid-cols-3 gap-3 text-left">
+                        <div class="bg-white/80 p-3 rounded-2xl border border-brand-beige flex items-center gap-2.5">
+                            <div class="w-8 h-8 rounded-xl bg-brand-beige flex items-center justify-center text-brand-sage shrink-0">🌱</div>
+                            <span class="text-xs font-semibold text-brand-text">Niños, Jóvenes y Adultos</span>
+                        </div>
+                        <div class="bg-white/80 p-3 rounded-2xl border border-brand-beige flex items-center gap-2.5">
+                            <div class="w-8 h-8 rounded-xl bg-brand-rose/40 flex items-center justify-center text-brand-text shrink-0">🎧</div>
+                            <span class="text-xs font-semibold text-brand-text">Estudios Auditivos</span>
+                        </div>
+                        <div class="bg-white/80 p-3 rounded-2xl border border-brand-beige flex items-center gap-2.5 col-span-2 sm:col-span-1">
+                            <div class="w-8 h-8 rounded-xl bg-brand-beige flex items-center justify-center text-brand-sage shrink-0">🤝</div>
+                            <span class="text-xs font-semibold text-brand-text">Atención Calidad & Cálida</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual Element / Frame with Professional Photo -->
+                <div class="md:col-span-5 flex justify-center relative">
+                    <!-- Subtle decorative background shape -->
+                    <div class="absolute -inset-4 bg-gradient-to-tr from-brand-rose/50 to-brand-sage/30 rounded-[2.5rem] blur-2xl opacity-70 transform rotate-3"></div>
+                    
+                    <div class="relative bg-white p-5 rounded-[2.5rem] border border-brand-beige card-shadow w-full max-w-sm text-center space-y-5">
+                        <!-- Foto Profesional desde GitHub -->
+                        <div class="w-48 h-56 mx-auto rounded-3xl overflow-hidden border-4 border-white shadow-md relative bg-[#F5C2C1] flex items-center justify-center">
+                            <img src="https://raw.githubusercontent.com/Matiax92/fotos/main/foto%20profesional.jpeg" alt="Lic. Camila Tataryn" class="w-full h-full object-cover">
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-bold text-brand-text">Lic. Camila Tataryn</h3>
+                            <p class="text-xs font-semibold text-brand-sage uppercase tracking-wider mt-0.5">Licenciada en Fonoaudiología</p>
+                        </div>
+
+                        <div class="space-y-1 text-sm bg-brand-beige/60 p-3.5 rounded-2xl text-brand-text border border-brand-beige">
+                            <p class="font-semibold text-[11px] uppercase tracking-wider text-brand-muted">Matrícula Profesional</p>
+                            <p class="font-extrabold text-base text-brand-text">M.P. 1830/2</p>
+                        </div>
+
+                        <div class="pt-1 text-xs text-brand-muted flex items-center justify-center gap-1.5 font-medium">
+                            <svg class="w-4 h-4 text-brand-sage fill-current" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                            </svg>
+                            <span>Atención en Consultorio</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Fonoaudiología (Área Clínica modificada sin voz ni deglución) -->
+    <section id="fonoaudiologia" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-sage bg-brand-beige px-3 py-1 rounded-full">Área Clínica</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-text mt-3">Lenguaje</h2>
+                <p class="text-brand-muted mt-3 text-base">Acompañamiento integral orientado a niños y adolescentes para potenciar su comunicación y lenguaje.</p>
+            </div>
+
+            <div class="grid md:grid-cols-1 gap-8 max-w-lg mx-auto">
+                
+                <!-- Card única de Lenguaje y Habla -->
+                <div class="bg-[#FAFAFA] p-8 rounded-3xl border border-brand-beige card-shadow card-shadow-hover transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-brand-rose/40 flex items-center justify-center text-brand-text mb-6">
+                            <!-- Speech bubble icon -->
+                            <svg class="w-7 h-7 stroke-current fill-none stroke-[2]" viewBox="0 0 24 24">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-brand-text mb-3">Lenguaje y Habla</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-4">
+                            Evaluación, diagnóstico y tratamiento de alteraciones en la articulación, fluidez, desarrollo del lenguaje e inteligibilidad del habla.
+                        </p>
+                        <ul class="space-y-2 text-xs font-medium text-brand-text">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-sage"></span> Retrasos del lenguaje</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-sage"></span> Trastornos de los sonidos del habla (TSH)</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-sage"></span> Fluidez y comunicación</li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-brand-beige text-xs font-semibold text-brand-sage uppercase tracking-wider">
+                        Niños & Adolescentes
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Audiología -->
+    <section id="audiologia" class="py-20 bg-brand-beige/40 border-y border-brand-beige">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-bold uppercase tracking-widest text-brand-sage bg-white px-3.5 py-1.5 rounded-full border border-brand-sage/20">Especialidad Auditiva</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-text leading-tight">
+                        Audiología & Estudios Auditivos
+                    </h2>
+                    <p class="text-brand-muted leading-relaxed">
+                        Servicio orientado a la prevención, evaluación y diagnóstico del sistema auditivo para adultos y adultos mayores.
+                    </p>
+                    
+                    <div class="bg-white p-6 rounded-2xl border border-brand-beige space-y-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-sage/20 text-brand-sage flex items-center justify-center shrink-0 mt-0.5">✓</div>
+                            <p class="text-sm font-medium text-brand-text">Estudios con equipamiento especializado de precisión.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-sage/20 text-brand-sage flex items-center justify-center shrink-0 mt-0.5">✓</div>
+                            <p class="text-sm font-medium text-brand-text">Asesoramiento personalizado en la selección de audífonos.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-sage/20 text-brand-sage flex items-center justify-center shrink-0 mt-0.5">✓</div>
+                            <p class="text-sm font-medium text-brand-text">Informes audiológicos claros para derivación médica.</p>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/5493471319597" target="_blank" class="inline-flex items-center gap-2 text-brand-sage font-bold hover:text-brand-sage-dark transition-colors pt-2">
+                        <span>Consultar por un estudio auditivo</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </a>
+                </div>
+
+                <!-- Right Cards Grid -->
+                <div class="lg:col-span-7 grid sm:grid-cols-2 gap-6">
+                    
+                    <div class="bg-white p-6 rounded-3xl border border-brand-beige card-shadow space-y-3">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-beige flex items-center justify-center text-brand-sage font-bold">
+                            01
+                        </div>
+                        <h4 class="text-xl font-bold text-brand-text">Evaluación Audiológica</h4>
+                        <p class="text-xs text-brand-muted leading-relaxed">
+                            Pruebas orientadas a determinar la capacidad auditiva, umbrales de audición y discriminación de la palabra.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-3xl border border-brand-beige card-shadow space-y-3">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-rose/40 flex items-center justify-center text-brand-text font-bold">
+                            02
+                        </div>
+                        <h4 class="text-xl font-bold text-brand-text">Estudios Auditivos</h4>
+                        <p class="text-xs text-brand-muted leading-relaxed">
+                            Audiometrías tonales, logoaudiometrías y valoraciones funcionales para adultos.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-3xl border border-brand-beige card-shadow space-y-3">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-sage/20 flex items-center justify-center text-brand-sage font-bold">
+                            03
+                        </div>
+                        <h4 class="text-xl font-bold text-brand-text">Selección de Audífonos</h4>
+                        <p class="text-xs text-brand-muted leading-relaxed">
+                            Orientación y adaptación técnica para personas con hipoacusia o pérdida auditiva.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-3xl border border-brand-beige card-shadow space-y-3">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-beige flex items-center justify-center text-brand-sage font-bold">
+                            04
+                        </div>
+                        <h4 class="text-xl font-bold text-brand-text">Salud & Prevención</h4>
+                        <p class="text-xs text-brand-muted leading-relaxed">
+                            Controles periódicos, recomendaciones de protección auditiva y cuidado en ambientes ruidosos.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section: Sobre Mí / Formación -->
+    <section id="sobre-mi" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-[#FAFAFA] to-brand-beige/50 border border-brand-beige p-8 sm:p-12 rounded-[2.5rem] card-shadow">
+                <div class="grid md:grid-cols-12 gap-8 items-center">
+                    
+                    <div class="md:col-span-5 text-center">
+                        <!-- Foto Profesional en Sobre Mí también desde GitHub -->
+                        <div class="w-52 h-64 mx-auto rounded-3xl overflow-hidden border-4 border-white shadow-lg bg-[#F5C2C1] relative flex items-center justify-center">
+                            <img src="https://raw.githubusercontent.com/Matiax92/fotos/main/foto%20profesional.jpeg" alt="Lic. Camila Tataryn" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-2xl font-bold text-brand-text mt-4">Lic. Camila Tataryn</h3>
+                        <p class="text-xs font-semibold text-brand-sage uppercase tracking-wider">Fonoaudiología</p>
+                    </div>
+
+                    <div class="md:col-span-7 space-y-4">
+                        <span class="text-xs font-bold uppercase tracking-widest text-brand-sage bg-brand-beige px-3 py-1 rounded-full">Perfil Profesional</span>
+                        <h2 class="text-3xl font-extrabold text-brand-text">Compromiso con la salud y la comunicación</h2>
+                        
+                        <p class="text-brand-muted text-sm leading-relaxed">
+                            Como Licenciada en Fonoaudiología, mi objetivo central es brindar una atención cálida, basada en la empatía y la actualización constante. Trabajo junto a cada paciente y su familia para construir herramientas efectivas que potencien la voz, la audición y la comunicación diaria.
+                        </p>
+
+                        <div class="pt-2 grid sm:grid-cols-2 gap-4">
+                            <div class="bg-white p-4 rounded-2xl border border-brand-beige shadow-sm">
+                                <span class="text-xs font-bold text-brand-sage uppercase block">Formación Académica</span>
+                                <span class="text-sm font-semibold text-brand-text">Licenciada en Fonoaudiología</span>
+                            </div>
+                            <div class="bg-white p-4 rounded-2xl border border-brand-beige shadow-sm">
+                                <span class="text-xs font-bold text-brand-sage uppercase block">Matrícula Profesional</span>
+                                <span class="text-sm font-extrabold text-brand-text">M.P. 1830/2</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Contacto y Ubicación -->
+    <section id="contacto" class="py-20 bg-[#FAFAFA] border-t border-brand-beige">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-sage bg-brand-beige px-3 py-1 rounded-full">Atención & Consultas</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-text mt-3">Contacto y Turnos</h2>
+                <p class="text-brand-muted mt-2 text-sm">Comunicate directamente para coordinar tu evaluación o consulta presencial.</p>
+            </div>
+
+            <div class="grid md:grid-cols-12 gap-8 items-start">
+                
+                <!-- Info Cards -->
+                <div class="md:col-span-5 space-y-4">
+                    
+                    <!-- WhatsApp Direct Card -->
+                    <a href="https://wa.me/5493471319597" target="_blank" rel="noopener noreferrer" 
+                       class="block bg-brand-sage text-white p-6 rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 group">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center shrink-0">
+                                <svg class="w-6 h-6 fill-current text-white" viewBox="0 0 24 24">
+                                    <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.758.459 3.474 1.33 4.982l-1.413 5.16 5.283-1.385a9.96 9.96 0 004.782 1.222h.005c5.507 0 9.991-4.479 9.992-9.985A9.957 9.957 0 0012.012 2zm5.82 14.161c-.244.688-1.428 1.312-1.986 1.388-.518.071-1.189.102-1.912-.132-.44-.142-1.008-.328-1.748-.648-3.08-1.334-5.093-4.437-5.247-4.643-.153-.205-1.252-1.666-1.252-3.177 0-1.512.793-2.256 1.076-2.559.283-.303.618-.379.824-.379.206 0 .412.002.59.011.188.01.441-.072.69.524.256.615.875 2.133.952 2.288.077.154.128.334.026.54-.103.205-.154.334-.308.514-.154.18-.325.402-.464.54-.154.154-.315.322-.135.63.18.308.8 1.32 1.716 2.136 1.178 1.05 2.17 1.376 2.478 1.53.308.154.488.128.668-.077.18-.205.77-.898.975-1.206.205-.308.411-.256.693-.154.282.103 1.796.847 2.104 1.001.308.154.513.231.59.359.077.129.077.744-.167 1.432z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-xs uppercase tracking-wider font-semibold opacity-90 block">Mensaje Directo</span>
+                                <span class="text-xl font-extrabold block">3471 31-9597</span>
+                                <span class="text-xs underline opacity-80 mt-1 block group-hover:opacity-100">Haz clic para chatear por WhatsApp &rarr;</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Phone Info Card -->
+                    <div class="bg-white p-6 rounded-3xl border border-brand-beige card-shadow flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-beige text-brand-sage flex items-center justify-center shrink-0">
+                            <svg class="w-6 h-6 stroke-current fill-none stroke-[2]" viewBox="0 0 24 24">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="text-xs font-semibold text-brand-muted uppercase block">Teléfono de Contacto</span>
+                            <span class="text-base font-bold text-brand-text">+54 9 3471 31-9597</span>
+                        </div>
+                    </div>
+
+                    <!-- Horarios Card -->
+                    <div class="bg-white p-6 rounded-3xl border border-brand-beige card-shadow flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-rose/40 text-brand-text flex items-center justify-center shrink-0">
+                            <svg class="w-6 h-6 stroke-current fill-none stroke-[2]" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="text-xs font-semibold text-brand-muted uppercase block">Atención</span>
+                            <span class="text-base font-bold text-brand-text">Turnos Programados</span>
+                            <span class="text-xs text-brand-muted block">Coordinación previa por WhatsApp</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Google Maps Embed Placeholder -->
+                <div class="md:col-span-7 bg-white p-4 rounded-3xl border border-brand-beige card-shadow">
+                    <div class="w-full h-80 rounded-2xl overflow-hidden bg-brand-beige/50 flex flex-col items-center justify-center p-6 text-center border border-dashed border-brand-sage/40 relative">
+                        <div class="w-12 h-12 rounded-full bg-brand-sage/20 text-brand-sage flex items-center justify-center mb-3">
+                            <svg class="w-6 h-6 stroke-current fill-none stroke-[2]" viewBox="0 0 24 24">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-text">Consultorio Fonoaudiológico</h4>
+                        <p class="text-xs text-brand-muted max-w-sm mt-1">
+                            Atención presencial en consultorio acondicionado para la atención de niños, adultos y realización de estudios audiológicos.
+                        </p>
+                        <a href="https://wa.me/5493471319597" target="_blank" class="mt-4 px-4 py-2 bg-brand-sage text-white text-xs font-semibold rounded-xl hover:bg-brand-sage-dark transition-colors">
+                            Solicitar Ubicación Exacta
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-brand-beige py-10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div>
+                <span class="font-heading text-xl font-bold text-brand-text block">Lic. Camila Tataryn</span>
+                <span class="text-xs text-brand-muted block mt-0.5">Fonoaudiología & Audiología &bull; M.P. 1830/2</span>
+            </div>
+            <p class="text-xs text-brand-muted">
+                &copy; <span id="year"></span> Lic. Camila Tataryn. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Simple JavaScript for Interactive Elements -->
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
