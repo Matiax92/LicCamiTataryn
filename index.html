@@ -88,6 +88,10 @@
             box-shadow: 0 20px 35px -10px rgba(148, 180, 159, 0.22), 0 8px 20px -4px rgba(0, 0, 0, 0.06);
             transform: translateY(-3px);
         }
+        /* Fuerza a que el icono de la pestaña se vea redondo en navegadores compatibles */
+        link[rel*="icon"] {
+            border-radius: 50%;
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-brand-rose/40 selection:text-brand-text">
